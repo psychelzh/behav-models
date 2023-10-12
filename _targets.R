@@ -28,13 +28,13 @@ tar_source()
 # Replace the target list below with your own:
 list(
   tarflow.iquizoo::prepare_fetch_data(
-    params,
+    data.frame(),
     what = "all", # change to "scores" or "raw_data" if you want to
     # For advanced usage, set custom templates by uncommenting next line
     templates = tarflow.iquizoo::setup_templates(
       contents = "sql/contents_with_retest.sql"
     ),
-    check_progress = TRUE # set as `FALSE` if projects finalized
+    check_progress = FALSE # set as `FALSE` if projects finalized
   )
   # more targets goes here
 )
