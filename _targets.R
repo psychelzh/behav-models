@@ -9,8 +9,7 @@ library(targets)
 
 # Set target options:
 tar_option_set(
-  packages = c("tarflow.iquizoo", "preproc.iquizoo"), # packages that your targets need to run
-  imports = "preproc.iquizoo", # comment out this if only "scores" are required
+  packages = c("tarflow.iquizoo"), # packages that your targets need to run
   # format = "qs", # Optionally set the default storage format. qs is fast.
   #
   # For distributed computing in tar_make(), supply a {crew} controller
@@ -30,6 +29,7 @@ list(
   tarflow.iquizoo::prepare_fetch_data(
     data.frame(),
     what = "all", # change to "scores" or "raw_data" if you want to
+    action_raw_data = "parse",
     # For advanced usage, set custom templates by uncommenting next line
     templates = tarflow.iquizoo::setup_templates(
       contents = "sql/contents_with_retest.sql"
