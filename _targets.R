@@ -10,7 +10,7 @@ library(targets)
 # Set target options:
 tar_option_set(
   packages = c("tarflow.iquizoo"), # packages that your targets need to run
-  # format = "qs", # Optionally set the default storage format. qs is fast.
+  format = "qs", # Optionally set the default storage format. qs is fast.
   #
   # For distributed computing in tar_make(), supply a {crew} controller
   # as discussed at https://books.ropensci.org/targets/crew.html.
@@ -26,9 +26,9 @@ tar_source()
 
 # Replace the target list below with your own:
 list(
-  tarflow.iquizoo::prepare_fetch_data(
+  tarflow.iquizoo::tar_prep_iquizoo(
     data.frame(),
-    what = "all", # change to "scores" or "raw_data" if you want to
+    what = "raw_data", # change to "scores" or "raw_data" if you want to
     action_raw_data = "parse",
     # For advanced usage, set custom templates by uncommenting next line
     templates = tarflow.iquizoo::setup_templates(
