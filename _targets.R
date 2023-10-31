@@ -29,7 +29,7 @@ list(
   tarflow.iquizoo::tar_prep_iquizoo(
     data.frame(),
     what = "raw_data", # change to "scores" or "raw_data" if you want to
-    action_raw_data = "parse",
+    action_raw_data = "all",
     # For advanced usage, set custom templates by uncommenting next line
     templates = tarflow.iquizoo::setup_templates(
       contents = "sql/contents_with_retest.sql"
